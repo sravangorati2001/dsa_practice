@@ -1,0 +1,9 @@
+string longestCommonPrefix(vector<string>& strs) {
+         if(strs.empty()) return "";
+        auto d=size(strs[0]);
+        for(int i{1};i<size(strs);i++){
+         d=distance(begin(strs[0]),mismatch(begin(strs[0]),begin(strs[0])+min(d,size(strs[i])),
+                    begin(strs[i])).first);
+        }
+        return {begin(strs[0]),begin(strs[0])+d};
+    }
