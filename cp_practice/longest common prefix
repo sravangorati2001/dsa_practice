@@ -1,3 +1,6 @@
+//Input: strs = ["flower","flow","flight"]
+//Output: "fl"
+
 string longestCommonPrefix(vector<string>& strs) {
          if(strs.empty()) return "";
         auto d=size(strs[0]);
