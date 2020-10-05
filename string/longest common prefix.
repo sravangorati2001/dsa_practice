@@ -1,0 +1,32 @@
+//Input: strs = ["flower","flow","flight"]
+//Output: "fl"
+// using stl
+string longestCommonPrefix(vector<string>& strs) {
+         if(strs.empty()) return "";
+        auto d=size(strs[0]);
+        for(int i{1};i<size(strs);i++){
+         d=distance(begin(strs[0]),mismatch(begin(strs[0]),begin(strs[0])+min(d,size(strs[i])),
+                    begin(strs[i])).first);
+        }
+        return {begin(strs[0]),begin(strs[0])+d};
+    }
+// using set or stack
+
+ string longestCommonPrefix(vector<string>& strs) {
+        int n=size(strs),k=INT_MAX;
+        string ans="";
+         if(!n) return "";
+        for(int i=0;i<n;i++)
+          if(k>size(strs[i])) k=size(strs[i]);
+        for(int i=0;i<k;i++){
+          int j=0;
+            set<char> s;
+            while(j<n){
+                s.insert(strs[j][i]);
+                j++;
+            }
+            if(size(s)==1){ans.push_back(strs[j-1][i]);cout<<"ki";}
+            else break;
+        }
+        return ans;
+    }
