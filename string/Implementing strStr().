@@ -1,0 +1,27 @@
+ 
+ 
+ int strStr(string haystack, string needle) {
+        int n=size(haystack),l=size(needle);       
+        for(int i=0;i<=n-l;i++){
+            int k=0,j=i;
+        while(k<l and haystack[j]==needle[k]){
+            j++; k++;
+        }
+           if(k==size(needle)) return i;
+        }
+          return -1;
+        
+    }
+    
+    // using substr()
+    
+    int strStr(string haystack, string needle) {
+        int n=size(haystack),l=size(needle);       
+        for(int i=0;i<=n-l;i++){
+            int k=0,j=i;
+         string sub=haystack.substr(i,l);
+            if(sub==needle) return i;
+        }
+          return -1;
+        
+    }
