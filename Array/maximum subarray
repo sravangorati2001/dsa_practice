@@ -1,0 +1,10 @@
+//  using kadane's algorithm
+ 
+ int maxSubArray(vector<int>& nums) {
+        int max_so_far=nums[0],cur_max=nums[0];
+        for(int i=1;i<size(nums);i++){
+            cur_max=max(nums[i],cur_max+nums[i]);
+            max_so_far=max(max_so_far,cur_max);
+        }
+        return max_so_far;
+    }
