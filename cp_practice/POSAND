@@ -1,0 +1,49 @@
+                 /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x)     x.begin(),x.end()
+#define fast       ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s)        s.size()
+#define lcm(a,b)    (a*b)/__gcd(a,b)
+
+bool isPowerOfTwo (int x) 
+{ 
+    return x && (!(x&(x-1))); 
+} 
+
+signed main() {
+      fast;
+       ll t;
+       cin>>t;
+       while(t--){
+          int n;
+          cin>>n;
+          if(n==1){
+               cout<<"1\n";
+               continue;
+          }
+          if(isPowerOfTwo(n)){
+               cout<<"-1\n";
+               continue;
+          }  
+           cout<<"2 3 1 ";
+          for(int i=4;i<=n;){
+              if(isPowerOfTwo(i)){
+              cout<<i+1<<" "<<i<<" ";
+              i++;
+              }
+              else cout<<i<<" ";
+              i++;
+          }
+          cout<<"\n";
+       }
+	return 0;
+   
+}
