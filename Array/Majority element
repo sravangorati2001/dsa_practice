@@ -1,4 +1,5 @@
 
+// moore voting algorithm
 
 int majorityElement(vector<int>& nums) {
         int count=1,res=0,n=nums.size(); 
@@ -12,3 +13,22 @@ int majorityElement(vector<int>& nums) {
         }
         return nums[res];
    }
+   
+   
+// using nth_element
+
+int majorityElement(vector<int>& nums) {
+        int n = nums.size()/2;
+        nth_element(nums.begin(), nums.begin() + n, nums.end());
+        return nums[n];
+    }
+    
+    // using hash map
+    
+    int majorityElement(vector<int>& nums) {
+        map<int,int> hash;
+        for(int i:nums){
+            if(++hash[i] > (int)(nums.size() / 2)) return i;
+        }
+        return -1;
+    }
