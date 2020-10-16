@@ -1,0 +1,13 @@
+// using two pointer technique 
+
+vector<int> searchRange(vector<int>& nums, int target) {
+        int first=0,last=nums.size()-1;
+        while(first<=last){
+          if(nums[last]==target and nums[first]==target){
+              return {first,last};
+          }
+            else if(nums[first]<target) first++;
+            else if(nums[last]>target) last--;
+        }
+        return {-1,-1};
+    }
