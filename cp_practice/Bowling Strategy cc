@@ -1,0 +1,43 @@
+
+
+// n - no of overs , k - no of players  and l - atmost overs for a bowler
+
+
+
+                 /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x)     x.begin(),x.end()
+#define fast       ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s)        s.size()
+#define lcm(a,b)    (a*b)/__gcd(a,b)
+
+signed main() {
+      fast;
+       ll t;
+       cin>>t;
+       while(t--){
+          ll n,k,l;
+          cin>>n>>k>>l;
+          if(n>k*l or (k==1 and n>1)){
+               cout<<"-1\n";
+               continue;
+          }
+          while(n>0){
+            for(ll i=1;i<=k and n>0;i++){
+           cout<<i<<" ";
+           n--;
+            }
+          }
+          cout<<"\n";
+       }
+	return 0;
+   
+}
