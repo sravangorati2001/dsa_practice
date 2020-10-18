@@ -1,0 +1,46 @@
+
+
+
+                 /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x)     x.begin(),x.end()
+#define fast       ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s)        s.size()
+#define lcm(a,b)    (a*b)/__gcd(a,b)
+
+signed main() {
+      fast;
+       ll t;
+       cin>>t;
+       while(t--){
+         ll n,k;
+         cin>>n>>k;
+         ll a[n],prev=0,cur=0,ans=0,f=0;
+         fori(0,n) cin>>a[i];
+         fori(0,n){
+              if(a[i]>k){
+              f=1;
+              break;
+              }
+              cur=a[i];
+              if(prev+cur>k) {
+                   prev=0;
+                   ans++;
+              }
+              prev+=a[i];
+         }
+         if(prev) ans++;
+         if(f) cout<<"-1\n";
+         else cout<<ans nl;
+       }
+	return 0;
+   
+}
