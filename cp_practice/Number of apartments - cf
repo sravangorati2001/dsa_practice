@@ -1,0 +1,50 @@
+
+
+// n=67 -> 67=3*10+0*5+1*7
+
+                        /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define forj(a,b) for(long long j=a;j<b;j++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define fora(m)   for(auto i=m.begin();i!=m.end();i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s) s.size()
+inline ll getn(){
+	ll sign=1,num;
+	char c;
+	c=getchar();
+	for(;c<'0'||c>'9';c=getchar())if(c=='-')sign=-1;
+	for(num=0;(c>='0' && c<='9');c=getchar())num=num*10+c-'0';
+	return num*sign;
+}
+
+signed main() {
+       fast;
+        ll t;
+        cin>>t;
+        while(t--){
+                ll n;
+                cin>>n;
+                if(n==1 or n==2 or n==4){
+                        cout<<-1 nl;
+                        continue;
+                }
+                if(n%3==0)
+                cout<<n/3 sp 0 sp 0 nl;
+                else if(n%3==1)
+                cout<< (n/3)-2 sp 0 sp 1 nl;
+                else 
+                cout<< (n/3)-1 sp 1 sp 0 nl;
+        }
+      
+	return 0;
+   
+}
