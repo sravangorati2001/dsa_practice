@@ -1,0 +1,50 @@
+
+
+                        /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define forj(a,b) for(long long j=a;j<b;j++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define fora(m)   for(auto i=m.begin();i!=m.end();i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s) s.size()
+inline ll getn(){
+	ll sign=1,num;
+	char c;
+	c=getchar();
+	for(;c<'0'||c>'9';c=getchar())if(c=='-')sign=-1;
+	for(num=0;(c>='0' && c<='9');c=getchar())num=num*10+c-'0';
+	return num*sign;
+}
+
+signed main() {
+       fast;
+       ll t;
+       cin>>t;
+       while(t--){
+           ll n,ans=0,f=0,count=0;
+           cin>>n;
+           ll a[n];
+           fori(0,n) cin>>a[i];
+           fori(0,n){
+                  if(a[i]==1){
+                  count+=ans;
+                   f=1;
+                   ans=0;
+                  }
+                  else if(a[i]==0 and f ){
+                          ans++;
+                  }
+           }
+           cout<< count nl;
+       }
+	return 0;
+   
+}
