@@ -1,0 +1,47 @@
+
+
+// s= BBBABA -> l=2 BA
+
+                        /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define forj(a,b) for(long long j=a;j<b;j++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define fora(m)   for(auto i=m.begin();i!=m.end();i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s) s.size()
+inline ll getn(){
+	ll sign=1,num;
+	char c;
+	c=getchar();
+	for(;c<'0'||c>'9';c=getchar())if(c=='-')sign=-1;
+	for(num=0;(c>='0' && c<='9');c=getchar())num=num*10+c-'0';
+	return num*sign;
+}
+
+signed main() {
+       fast;
+        ll t;
+        cin>>t;
+        while(t--){
+          string s;
+          cin>>s;
+          ll n=l(s),a=0,ba=0;
+          fori(0,n){
+                  if(s[i]=='B' and a==0) ba++;
+                  else if(s[i]=='B' and a>0) a--;
+                  else if(s[i]=='A') a++;
+          }
+          cout<< ba%2 + a nl;
+        }
+      
+	return 0;
+   
+}
