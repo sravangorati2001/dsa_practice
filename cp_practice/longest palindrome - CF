@@ -1,0 +1,60 @@
+
+
+// 3 3
+ tab
+ one       output : 6 tabbat
+ bat
+
+
+                        /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define forj(a,b) for(long long j=a;j<b;j++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define fora(m)   for(auto i=m.begin();i!=m.end();i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s) s.size()
+inline ll getn(){
+	ll sign=1,num;
+	char c;
+	c=getchar();
+	for(;c<'0'||c>'9';c=getchar())if(c=='-')sign=-1;
+	for(num=0;(c>='0' && c<='9');c=getchar())num=num*10+c-'0';
+	return num*sign;
+}
+
+signed main() {
+       fast;
+        ll n,m;
+        cin>>n>>m;
+        set<string> se;
+        string ans="",temp="",s[n];
+        fori(0,n){
+                cin>>s[i];
+                se.insert(s[i]);
+        }
+        fori(0,n){
+                string s1=s[i];
+                reverse(s1.begin(),s1.end());
+               if(s[i]==s1)
+                temp=s[i];
+               else if(se.find(s1)!=se.end()){
+                ans+=s[i];
+                se.erase(s[i]);
+                se.erase(s1);
+                }
+        }
+        cout<< 2*l(ans)+l(temp) nl;
+        cout<< ans+temp ;
+        reverse(ans.begin(),ans.end());
+        cout<<ans nl;
+	return 0;
+   
+}
