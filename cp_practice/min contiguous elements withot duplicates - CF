@@ -1,0 +1,28 @@
+// 9 3 3
+// 3 3 3 2 2 2 1 1 1   // output : 1
+
+//  4 10 4
+//  10 8 6 4  output : 4
+
+
+signed main() {
+       fast;
+       ll t;
+       cin>>t;
+       while(t--){
+  int n,k,d,ans=INT_MAX;
+        cin>>n>>k>>d;
+        ll a[n];
+        fori(0,n) cin>>a[i];
+        fori(0,n-d+1){
+                set<int> s;
+                forj(i,i+d){
+                   s.insert(a[j]);     
+                }
+                ans=min(ans,(int)s.size());
+        }
+        cout<<ans nl;
+       }
+	return 0;
+   
+}
