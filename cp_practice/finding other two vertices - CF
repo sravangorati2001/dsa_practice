@@ -1,0 +1,19 @@
+ // input : 0 0 1 1 
+ // output : 0 1 1 0
+
+
+signed main() {
+       fast;
+        ll x1,y1,x2,y2;
+        cin>>x1>>y1>>x2>>y2;
+        if(x1!=x2 and y1!=y2 and abs(x1-x2)!=abs(y1-y2))
+        cout<<-1 nl;
+        else if(x1==x2)
+        cout<< x1+abs(y1-y2) sp y1 sp x2 +abs(y1-y2)  sp y2 nl;
+        else if(y1==y2)
+        cout<< x1 sp y1+abs(x1-x2) sp x2 sp y2+abs(x1-x2) nl;
+        else 
+        cout<<x1 sp y2 sp x2 sp y1 nl;
+	return 0;
+   
+}
