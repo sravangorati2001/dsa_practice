@@ -1,0 +1,15 @@
+// 1 22 5555 777
+
+void count(int n){
+ll n,ans=0;
+        cin>>n;
+        fore(1,9){
+                ll temp=i;
+        while(temp<=n){
+         ans++;
+         temp=temp*10+i;
+          }        
+        }
+        cout<<  ans nl;
+        
+        }
