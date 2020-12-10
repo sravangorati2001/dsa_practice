@@ -1,0 +1,19 @@
+// input : "lee(t(c)o)de)"   output : "lee(t(c)o)de"
+
+
+
+string minRemoveToMakeValid(string s) {
+        stack<int> st;
+        for(int i=0;i<s.length();i++){
+            if(!isalpha(s[i]))
+            if( !st.empty() and s[st.top()]=='(' and s[i]==')')
+                st.pop();
+            else st.push(i);            
+        }
+        while(!st.empty()){
+            s[st.top()]='*';
+            st.pop();
+        }
+        s.erase(remove(s.begin(), s.end(), '*'), s.end());
+        return s;
+    }
