@@ -1,0 +1,60 @@
+
+//  the maximum sum of the maximum by size (length) alternating subsequence of a.
+
+// input 10
+// -2 8 3 8 -4 -15 5 -2 -3 1           output : 6   (-2,8,-4,5,-2,1)
+
+
+                        /************* SRAVAN KUMAR **************/
+
+#include <bits/stdc++.h>
+using namespace std;
+#define pb push_back
+#define ll long long
+#define fori(a,b) for(long long i=a;i<b;i++)
+#define forj(a,b) for(long long j=a;j<b;j++)
+#define fore(a,b) for(long long i=a;i<=b;i++)
+#define fora(m)   for(auto i=m.begin();i!=m.end();i++)
+#define sp <<" "<<
+#define nl <<"\n"
+#define all(x) x.begin(),x.end()
+#define fast ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define l(s) s.size()
+
+template<class T> inline void sort(T &a) { sort(all(a)); }
+
+inline ll getn(){
+	ll sign=1,num;
+	char c;
+	c=getchar();
+	for(;c<'0'||c>'9';c=getchar())if(c=='-')sign=-1;
+	for(num=0;(c>='0' && c<='9');c=getchar())num=num*10+c-'0';
+	return num*sign;
+}
+bool oppositeSign(ll x, ll y) 
+{ 
+    return ((x ^ y) < 0); 
+}
+signed main() {
+       fast;
+       ll t;
+       cin>>t;
+       while(t--){
+             ll n;
+             cin>>n;
+             ll a[n],ans=0;
+             fori(0,n) cin>>a[i];
+             for(int i=0;i<n;++i){
+                     ll cur=a[i],j=i;
+                     while(j<n and oppositeSign(a[i],a[j])==false){
+                             cur=max(cur,a[j]);
+                             j++;
+                     }
+                     ans+=cur;
+                     i=j-1;
+             }
+             cout<<ans nl;
+       }
+              
+	return 0;
+}
