@@ -1,0 +1,22 @@
+input : a[]=20 10 100 50   swap elements with b[i]!=b[[j]
+b[]=1 0 0 1
+
+key:If there is at least one element of type 0 and at least one element of type 1, we can always sort the array.
+
+void tSort(int a,int n){
+ ll a[n],b[n],one=0,zero=0;
+             fori(0,n) cin>>a[i];
+             fori(0,n) {
+             cin>>b[i];
+             if(b[i]) one=1;
+             else zero=1;
+             }
+             if(is_sorted(a,a+n)){
+                     cout<<"YES\n";
+                     continue;
+             }
+             if(zero and one) cout<<"YES\n";
+             else cout<<"NO\n";
+      }
+      
+      
