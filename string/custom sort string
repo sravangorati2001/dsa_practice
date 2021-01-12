@@ -1,0 +1,11 @@
+// given two strings a and b . sort b string so that charactera order should be as string a
+
+
+class Solution {
+  public:
+    string customSortString(string S, string T) {
+        sort(T.begin(), T.end(),
+             [&](char a, char b) { return S.find(a) < S.find(b); });
+        return T;
+    }
+};
