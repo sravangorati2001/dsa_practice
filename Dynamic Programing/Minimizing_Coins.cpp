@@ -6,10 +6,8 @@ int main(){
     int a[n+2];
     for(int i=1;i<=n;i++) cin>>a[i];
     int dp[n+1][x+1];
-    for(int i=0;i<=n;i++)
-    for(int j=0;j<=x;j++) dp[i][j]=0;
-    for(int i=0;i<=x;i++) dp[0][i]=1000001;
-    for(int i=0;i<=n;i++) dp[i][0]=0;
+   memset(dp,0,sizeof(dp));
+    for(long i=0;i<=x;i++) dp[0][i]=1000001;
     for(int i=1;i<=n;i++){
         for(int j=1;j<=x;j++){
            if(j>=a[i])
