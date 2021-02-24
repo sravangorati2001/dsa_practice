@@ -19,3 +19,28 @@ int main(){
     cout<<dp[n][x];
     return 0;
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+int main(){
+    ll n,x;
+    cin>>n>>x;
+    ll a[n+2];
+    for(ll i=1;i<=n;i++) cin>>a[i];
+    ll dp[x+1];
+    for(ll i=0;i<=x;i++) dp[i]=LLONG_MAX;
+    dp[0]=0;
+    for(ll i=1;i<=x;i++){
+      for(ll j=1;j<=n;j++){
+          if(i>=a[j] and dp[i-a[j]]!=LLONG_MAX and (1+dp[i-a[j]]<dp[i]))
+          dp[i]=1+dp[i-a[j]];
+      }
+    }
+    if(dp[x]==LLONG_MAX) dp[x]=-1;
+    cout<<dp[x];
+    return 0;
+}
