@@ -1,3 +1,5 @@
+
+// just reversing left and right childrens of every node
 class Solution {
 public:
     TreeNode* invertTree(TreeNode* root) {
