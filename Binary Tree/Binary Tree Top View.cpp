@@ -1,5 +1,5 @@
 
-
+// recursive
 class Solution
 {
     public:
@@ -21,6 +21,34 @@ class Solution
         solve(root,0,0,m);
         for(auto x:m){
             ans.push_back(x.second.first);
+        }
+        return ans;
+    }
+
+};
+
+// iterative
+class Solution
+{
+    public:
+    //Function to return a list of nodes visible from the top view 
+    //from left to right in Binary Tree.
+    vector<int> topView(Node *root)
+    {
+        vector<int> ans;
+        queue<pair<Node*,int>> q({make_pair(root,0)});
+        map<int,int> m;
+        while(q.size()){
+            pair<Node*,int> temp=q.front();
+            q.pop();
+            if(m.count(temp.second)==0){
+                m[temp.second]=temp.first->data;
+            }
+            if(temp.first->left) q.push(make_pair(temp.first->left,temp.second-1));
+            if(temp.first->right) q.push(make_pair(temp.first->right,temp.second+1));
+        }
+        for(auto x:m){
+            ans.push_back(x.second);
         }
         return ans;
     }
