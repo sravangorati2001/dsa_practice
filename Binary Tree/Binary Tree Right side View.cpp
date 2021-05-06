@@ -20,3 +20,23 @@ void solve(TreeNode *root,int level){
     }
 };
 
+//Iterative
+class Solution {
+public:
+    vector<int> rightSideView(TreeNode* root) {
+       vector<int> ans;
+   if(!root) return ans;
+   queue<TreeNode*> q({root});
+   while(q.size()){
+       int l=q.size();
+       for(int i=0;i<l;i++){
+           TreeNode *temp=q.front();
+           q.pop();
+           if(i==l-1) ans.push_back(temp->val);
+           if(temp->left) q.push(temp->left);
+           if(temp->right) q.push(temp->right);
+       }
+   }
+   return ans;
+    }
+};
